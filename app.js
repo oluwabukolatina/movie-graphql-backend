@@ -1,10 +1,12 @@
 const express = require('express')
 const app = express();
+const cors = require('cors');
 const mongoose = require('mongoose');
 const { graphqlHTTP } = require('express-graphql')
 const movieSchema = require('./schema/schema')
 const resolvers = require('./resolver/resolver')
 
+app.use(cors())
  mongoose.connect('mongodb://admin:admin1@ds263295.mlab.com:63295/movie-api-graphql', {
          useNewUrlParser: true,
          useCreateIndex: true,
