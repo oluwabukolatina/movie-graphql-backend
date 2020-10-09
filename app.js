@@ -20,6 +20,6 @@ const resolvers = require('./resolver/resolver')
 }));
        
 app.get('/', (req, res) => {res.send('hello')})
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
          console.log('listening on port 5000')
 })
